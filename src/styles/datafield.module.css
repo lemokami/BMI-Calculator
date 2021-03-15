@@ -1,0 +1,20 @@
+.field{
+  margin-bottom: 20px;
+}
+.field__label{
+  font-size: .95rem;
+  margin-bottom: 3px;
+  display: block;
+  color: rgba(f, f, f, 0.6);
+}
+
+.field__input{
+  padding: 16px;
+  min-width: 16rem;
+  border: 0;
+  border-radius: 8px;
+}
+
+.field__input:focus{
+  outline: 2px solid royalblue;
+}

@@ -1,19 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './styles/app.module.css';
 import Button from './Components/Button';
 import DataField from './Components/DataField';
 
 function App() {
-  const [height, setHeight] = useState<string>('');
   const [weight, setWeight] = useState<string>('');
+  const [height, setHeight] = useState<string>('');
+  const [bmi, setBmi] = useState<string | null>();
 
-  const generateBmi = () => {
-    console.log(height, weight);
+  const generateBmi = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    if (height && weight) {
+      e.preventDefault();
+      const BMI: number = Number(weight) / (Number(height) / 100) ** 2;
+      setBmi(BMI.toFixed(2));
+    }
   };
-  useEffect(() => {
-    const body = document.body;
-    console.log(body.style);
-  });
+
   return (
     <div className={styles.app}>
       <form className='form'>
@@ -21,18 +23,19 @@ function App() {
           labelName='Weight'
           placeHolder='Enter your weight in kg'
           changeFunc={setWeight}
-          type='text'
+          type='number'
           isRequired={true}
         />
         <DataField
           labelName='Height'
           placeHolder='Enter your height in cm'
           changeFunc={setHeight}
-          type='text'
+          type='number'
           isRequired={true}
         />
         <Button type='submit' value='Calculate BMI' clickFunc={generateBmi} />
       </form>
+      <h3>{bmi}</h3>
     </div>
   );
 }
