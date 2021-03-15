@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import styles from './styles/app.module.css';
 import Button from './Components/Button';
 import DataField from './Components/DataField';
 
@@ -9,8 +10,12 @@ function App() {
   const generateBmi = () => {
     console.log(height, weight);
   };
+  useEffect(() => {
+    const body = document.body;
+    console.log(body.style);
+  });
   return (
-    <div className='app'>
+    <div className={styles.app}>
       <form className='form'>
         <DataField
           labelName='Weight'

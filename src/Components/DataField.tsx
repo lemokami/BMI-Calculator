@@ -16,7 +16,6 @@ const DataField = ({ labelName, placeHolder, changeFunc, type }: FieldData) => {
         placeholder={placeHolder}
         id={labelName}
         onChange={(e) => changeFunc(e.target.value)}
-        required
       />
     </div>
   );
