@@ -2,4 +2,12 @@
   font-family: 'Poppins',sans-serif;
   min-height: 100vh;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
 }

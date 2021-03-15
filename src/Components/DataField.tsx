@@ -1,5 +1,5 @@
 import React from 'react';
-
+import styles from '../styles/datafield.module.css';
 interface FieldData {
   labelName: string;
   placeHolder: string | undefined;
@@ -16,14 +16,17 @@ const DataField = ({
   isRequired,
 }: FieldData) => {
   return (
-    <div>
-      <label htmlFor={labelName}>{labelName}</label>
+    <div className={styles.field}>
+      <label htmlFor={labelName} className={styles.field__label}>
+        {labelName}
+      </label>
       <input
         type={type || 'text'}
         placeholder={placeHolder}
         id={labelName}
         onChange={(e) => changeFunc(e.target.value)}
         required={isRequired || false}
+        className={styles.field__input}
       />
     </div>
   );
