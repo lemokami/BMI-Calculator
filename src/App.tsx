@@ -21,16 +21,18 @@ function App() {
           labelName='Weight'
           placeHolder='Enter your weight in kg'
           changeFunc={setWeight}
-          type='number'
+          type='text'
+          isRequired={true}
         />
         <DataField
           labelName='Height'
           placeHolder='Enter your height in cm'
           changeFunc={setHeight}
-          type='number'
+          type='text'
+          isRequired={true}
         />
+        <Button type='submit' value='Calculate BMI' clickFunc={generateBmi} />
       </form>
-      <Button type='submit' value='Calculate BMI' clickFunc={generateBmi} />
     </div>
   );
 }

@@ -5,9 +5,16 @@ interface FieldData {
   placeHolder: string | undefined;
   type: string | undefined;
   changeFunc: React.Dispatch<React.SetStateAction<string>>;
+  isRequired?: boolean;
 }
 
-const DataField = ({ labelName, placeHolder, changeFunc, type }: FieldData) => {
+const DataField = ({
+  labelName,
+  placeHolder,
+  changeFunc,
+  type,
+  isRequired,
+}: FieldData) => {
   return (
     <div>
       <label htmlFor={labelName}>{labelName}</label>
@@ -16,6 +23,7 @@ const DataField = ({ labelName, placeHolder, changeFunc, type }: FieldData) => {
         placeholder={placeHolder}
         id={labelName}
         onChange={(e) => changeFunc(e.target.value)}
+        required={isRequired || false}
       />
     </div>
   );
