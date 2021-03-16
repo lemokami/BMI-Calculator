@@ -1,20 +1,19 @@
-.btn{
+.btn {
   padding: 20px 60px;
   width: 100%;
   font-weight: bold;
   border: 0;
   border-radius: 8px;
-  background-color: rgba(65, 105, 225, 0.5);
+  background-color: royalblue;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease-in;
 }
 
-.btn:hover{
+.btn:hover {
   background-color: royalblue;
 }
 
-
-.btn:focus{
-  outline:2px solid rgba(255, 255, 255, 0.7);
+.btn:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.7);
 }

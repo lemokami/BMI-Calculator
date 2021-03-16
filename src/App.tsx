@@ -6,7 +6,7 @@ import DataField from './Components/DataField';
 function App() {
   const [weight, setWeight] = useState<string>('');
   const [height, setHeight] = useState<string>('');
-  const [bmi, setBmi] = useState<string | null>('0');
+  const [bmi, setBmi] = useState<string | null>('');
   const [result, setResult] = useState<string>('');
 
   const generateSpec = (BMI: number): string => {
