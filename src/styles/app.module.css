@@ -8,7 +8,6 @@
 }
 
 .app__calc {
-  border-right: 2px solid #fff;
   padding: 30px;
 }
 .form {
@@ -39,9 +38,7 @@
     flex-direction: column-reverse;
     align-items: center;
   }
-  .app__calc {
-    border: 0;
-  }
+
   .app__result {
     padding-left: 0;
     padding-bottom: 20px;
