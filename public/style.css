@@ -1,8 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-body{
+body {
   padding: 0;
   margin: 0;
   background-color: #4ea7d7;
-  font-family: "Poppins",sans-serif;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.5s ease;
+}
+
+.body--underweight {
+  background-color: #d74e73;
+}
+.body--normal {
+  background-color: #4ed790;
+}
+.body--overweight {
+  background-color: #d7734e;
+}
+.body--obese {
+  background-color: #d74e4e;
 }

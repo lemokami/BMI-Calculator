@@ -9,18 +9,34 @@ function App() {
   const [bmi, setBmi] = useState<string | null>('0');
   const [result, setResult] = useState<string>('');
 
+  const generateSpec = (BMI: number): string => {
+    if (BMI <= 18.5) return 'underweight';
+    else if (BMI > 18.5 && BMI < 24.9) return 'normal';
+    else if (BMI > 25 && BMI < 29.9) return 'overweight';
+    else return 'obese';
+  };
+
+  //function to remove background color added
+  const removeBgc = () => {
+    document.body.classList.remove(`body--underweight`);
+    document.body.classList.remove(`body--normal`);
+    document.body.classList.remove(`body--overweight`);
+    document.body.classList.remove(`body--obese`);
+  };
+
+  //function to genrate bmi from the weight & height
   const generateBmi = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     if (height && weight) {
       e.preventDefault();
       const BMI: number = Number(weight) / (Number(height) / 100) ** 2;
       let speculation: string = '';
-      if (BMI <= 18.5) speculation = 'Underweight';
-      else if (BMI > 18.5 && BMI < 24.9) speculation = 'Normal';
-      else if (BMI > 25 && BMI < 29.9) speculation = 'OverWeight';
-      else speculation = 'Obese';
+
+      speculation = generateSpec(BMI);
+      removeBgc();
+      document.body.classList.add(`body--${speculation}`);
 
       setBmi(BMI.toFixed(2));
-      setResult(speculation);
+      setResult(`${speculation[0].toUpperCase()}${speculation.slice(1)}`);
     }
   };
 
