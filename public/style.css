@@ -5,7 +5,7 @@ body {
   margin: 0;
   background-color: #4ea7d7;
   font-family: 'Poppins', sans-serif;
-  transition: background-color 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .body--underweight {
@@ -19,4 +19,13 @@ body {
 }
 .body--obese {
   background-color: #d74e4e;
+}
+
+@media (max-width: 1080px) {
+  input:focus {
+    outline: none !important;
+  }
+  button:focus {
+    outline: none !important;
+  }
 }
